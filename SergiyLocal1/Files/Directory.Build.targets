@@ -1,0 +1,19 @@
+<Project>
+	<ItemGroup Condition="'$(PkgPath)' != ''">
+		<Compile Remove="$(PkgPath)/SergiyLocal1/Assemblies/**" />
+		<Compile Remove="$(PkgPath)/SergiyLocal1/Data/**" />
+		<Compile Remove="$(PkgPath)/SergiyLocal1/SqlScripts/**" />
+		<Compile Remove="$(PkgPath)/SergiyLocal1/Schemas\**" />
+		<Compile Remove="$(PkgPath)/SergiyLocal1/Resources/**" />
+		<EmbeddedResource Remove="$(PkgPath)/SergiyLocal1/Assemblies/**" />
+		<EmbeddedResource Remove="$(PkgPath)/SergiyLocal1/Data/**" />
+		<EmbeddedResource Remove="$(PkgPath)/SergiyLocal1/SqlScripts/**" />
+		<EmbeddedResource Remove="$(PkgPath)/SergiyLocal1/Schemas/**" />
+		<EmbeddedResource Remove="$(PkgPath)/SergiyLocal1/Resources/**" />
+		<None Remove="$(PkgPath)/SergiyLocal1/Assemblies/**" />
+		<None Remove="$(PkgPath)/SergiyLocal1/Data/**" />
+		<None Remove="$(PkgPath)/SergiyLocal1/SqlScripts/**" />
+		<None Remove="$(PkgPath)/SergiyLocal1/Schemas/**" />
+		<None Remove="$(PkgPath)/SergiyLocal1/Resources/**" />
+  </ItemGroup>
+</Project>
