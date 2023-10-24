@@ -81,6 +81,26 @@ define("UsrRealtyFRUI_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**
 			},
 			{
 				"operation": "insert",
+				"name": "Button_9dz63we",
+				"values": {
+					"type": "crt.Button",
+					"caption": "#ResourceString(Button_9dz63we_caption)#",
+					"color": "accent",
+					"disabled": false,
+					"size": "medium",
+					"iconPosition": "only-text",
+					"visible": true,
+					"clicked": {
+						"request": "crt.SaveRecordRequest"
+					},
+					"clickMode": "default"
+				},
+				"parentName": "MainHeaderBottom",
+				"propertyName": "items",
+				"index": 1
+			},
+			{
+				"operation": "insert",
 				"name": "UsrName",
 				"values": {
 					"layoutConfig": {
