@@ -4,6 +4,7 @@
     "Name": "UsrRealtyFRUIBusinessRule",
     "ModifiedOnUtc": "\/Date(1698151539000)\/",
     "ManagerName": "AddonSchemaManager",
-    "Caption": "Realty FRUI (Business rules)"
+    "Caption": "Realty FRUI (Business rules)",
+    "DependsOn": []
   }
 }
