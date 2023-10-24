@@ -3,6 +3,17 @@ define("UsrRealtyFRUI_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**
 		viewConfigDiff: /**SCHEMA_VIEW_CONFIG_DIFF*/[
 			{
 				"operation": "merge",
+				"name": "MainHeader",
+				"values": {
+					"color": "#FDEDCC",
+					"visible": true,
+					"justifyContent": "start",
+					"alignItems": "stretch",
+					"wrap": "nowrap"
+				}
+			},
+			{
+				"operation": "merge",
 				"name": "SaveButton",
 				"values": {
 					"size": "large",
@@ -20,6 +31,7 @@ define("UsrRealtyFRUI_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**
 						"columnGap": "large",
 						"rowGap": "none"
 					},
+					"color": "#FDE6CB",
 					"visible": true
 				}
 			},
@@ -29,11 +41,13 @@ define("UsrRealtyFRUI_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**
 				"values": {
 					"styleType": "default",
 					"mode": "tab",
-					"bodyBackgroundColor": "primary-contrast-500",
+					"bodyBackgroundColor": "#FDEDCC",
 					"selectedTabTitleColor": "auto",
 					"tabTitleColor": "auto",
 					"underlineSelectedTabColor": "auto",
-					"headerBackgroundColor": "auto"
+					"headerBackgroundColor": "auto",
+					"visible": true,
+					"stretch": true
 				}
 			},
 			{
@@ -88,12 +102,13 @@ define("UsrRealtyFRUI_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**
 					"color": "accent",
 					"disabled": false,
 					"size": "medium",
-					"iconPosition": "only-text",
+					"iconPosition": "left-icon",
 					"visible": true,
 					"clicked": {
-						"request": "crt.SaveRecordRequest"
+						"request": "usr.MyButtonRequest"
 					},
-					"clickMode": "default"
+					"clickMode": "default",
+					"icon": "database-icon"
 				},
 				"parentName": "MainHeaderBottom",
 				"propertyName": "items",
@@ -404,7 +419,19 @@ define("UsrRealtyFRUI_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**
 				}
 			}
 		]/**SCHEMA_MODEL_CONFIG_DIFF*/,
-		handlers: /**SCHEMA_HANDLERS*/[]/**SCHEMA_HANDLERS*/,
+		handlers: /**SCHEMA_HANDLERS*/[
+			{
+				request: "usr.MyButtonRequest",
+				handler: async (request, next) => {
+					this.console.log("Button works...");
+					Terrasoft.showInformation("My button was pressed.");
+					var price = await request.$context.NumberAttribute_uuxyl6p;
+					this.console.log("Price = " + price);
+					return next?.handle(request);
+				}
+			}
+			
+		]/**SCHEMA_HANDLERS*/,
 		converters: /**SCHEMA_CONVERTERS*/{}/**SCHEMA_CONVERTERS*/,
 		validators: /**SCHEMA_VALIDATORS*/{}/**SCHEMA_VALIDATORS*/
 	};

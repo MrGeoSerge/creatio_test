@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="AddonConfig.Rules.6b7ac898-2333-c85a-06ac-b2e459559305.Caption" Value="Hide elements: Comment" />
+			<Item Name="Caption" Value="Realty FRUI form page (Business rules)" />
+		</Items>
+	</Group>
+</Resources>
