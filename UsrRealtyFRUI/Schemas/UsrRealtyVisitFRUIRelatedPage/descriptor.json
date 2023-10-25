@@ -4,6 +4,7 @@
     "Name": "UsrRealtyVisitFRUIRelatedPage",
     "ModifiedOnUtc": "\/Date(1698158721000)\/",
     "ManagerName": "AddonSchemaManager",
-    "Caption": "Realty visit (FreedomUI) (Page settings)"
+    "Caption": "Realty visit (FreedomUI) (Page settings)",
+    "DependsOn": []
   }
 }

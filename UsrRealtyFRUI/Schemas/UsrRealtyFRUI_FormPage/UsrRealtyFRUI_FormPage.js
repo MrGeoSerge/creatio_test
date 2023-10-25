@@ -1,3 +1,4 @@
+/* jshint esversion: 11*/
 define("UsrRealtyFRUI_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_ARGS*/()/**SCHEMA_ARGS*/ {
 	return {
 		viewConfigDiff: /**SCHEMA_VIEW_CONFIG_DIFF*/[
@@ -198,6 +199,29 @@ define("UsrRealtyFRUI_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**
 			},
 			{
 				"operation": "insert",
+				"name": "UsrComissionUSD",
+				"values": {
+					"layoutConfig": {
+						"column": 1,
+						"row": 5,
+						"colSpan": 1,
+						"rowSpan": 1
+					},
+					"type": "crt.NumberInput",
+					"label": "$Resources.Strings.NumberAttribute_futpukq",
+					"labelPosition": "auto",
+					"control": "$NumberAttribute_futpukq",
+					"visible": true,
+					"readonly": true,
+					"placeholder": "",
+					"tooltip": ""
+				},
+				"parentName": "SideAreaProfileContainer",
+				"propertyName": "items",
+				"index": 4
+			},
+			{
+				"operation": "insert",
 				"name": "UsrType",
 				"values": {
 					"layoutConfig": {
@@ -332,6 +356,28 @@ define("UsrRealtyFRUI_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**
 				"parentName": "UsrManager",
 				"propertyName": "listActions",
 				"index": 0
+			},
+			{
+				"operation": "insert",
+				"name": "UsrCommisionPercent",
+				"values": {
+					"layoutConfig": {
+						"column": 2,
+						"row": 3,
+						"colSpan": 1,
+						"rowSpan": 1
+					},
+					"type": "crt.NumberInput",
+					"label": "$Resources.Strings.UsrOfferTypeUsrCommisionPercent",
+					"control": "$UsrOfferTypeUsrCommisionPercent",
+					"readonly": true,
+					"placeholder": "",
+					"labelPosition": "auto",
+					"tooltip": ""
+				},
+				"parentName": "GeneralInfoTabContainer",
+				"propertyName": "items",
+				"index": 4
 			},
 			{
 				"operation": "insert",
@@ -714,6 +760,16 @@ define("UsrRealtyFRUI_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**
 								}
 							}
 						}
+					},
+					"UsrOfferTypeUsrCommisionPercent": {
+						"modelConfig": {
+							"path": "PDS.UsrOfferTypeUsrCommisionPercent"
+						}
+					},
+					"NumberAttribute_futpukq": {
+						"modelConfig": {
+							"path": "PDS.UsrComissionUSD"
+						}
 					}
 				}
 			},
@@ -738,7 +794,7 @@ define("UsrRealtyFRUI_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**
 					"dependencies": {
 						"GridDetail_prrsbz7DS": [
 							{
-								"attributePath": "Id",
+								"attributePath": "UsrParentRealty",
 								"relationPath": "PDS.Id"
 							}
 						]
@@ -754,7 +810,13 @@ define("UsrRealtyFRUI_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**
 					"PDS": {
 						"type": "crt.EntityDataSource",
 						"config": {
-							"entitySchemaName": "UsrRealtyFRUI"
+							"entitySchemaName": "UsrRealtyFRUI",
+							"attributes": {
+								"UsrOfferTypeUsrCommisionPercent": {
+									"path": "UsrOfferType.UsrCommisionPercent",
+									"type": "ForwardReference"
+								}
+							}
 						},
 						"scope": "page"
 					},
@@ -794,6 +856,26 @@ define("UsrRealtyFRUI_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**
 					var price = await request.$context.NumberAttribute_uuxyl6p;
 					this.console.log("Price = " + price);
 					return next?.handle(request);
+				}
+			},
+			{
+				request: "crt.HandleViewModelAttributeChangeRequest",
+				handler: async (request, next) => {	
+					/*sdgfsgfsdgf*/
+					this.console.log('HandleViewModelAttributeChangeRequest: ' + request.attributeName);
+					if(request.attributeName === 'NumberAttribute_uuxyl6p' ||
+					  request.attributeName === 'UsrOfferTypeUsrCommisionPercent'){
+						debugger;
+						this.console.log("HandleViewModelAttributeChangeRequest for the attribute");
+						var price = await request.$context.NumberAttribute_uuxyl6p;
+						this.console.log("price = " + price);
+						var percent = await request.$context.UsrOfferTypeUsrCommisionPercent;
+						this.console.log("percent = " + percent);
+						var commission = price * percent / 100;
+						this.console.log("commission = " + commission);
+						request.$context.NumberAttribute_futpukq = commission;
+					}
+				return next?.handle(request)
 				}
 			}
 			
