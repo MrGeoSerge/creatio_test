@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "40f5e327-ff41-4fbd-a321-b4c8679847c8",
+    "Name": "UsrAddGoldRateSubprocessUsrRealtyFRUI1",
+    "ModifiedOnUtc": "\/Date(1698772827000)\/",
+    "Parent": {
+      "UId": "5767ed33-4a09-4cc2-99ae-d1a51f4ca02a",
+      "Name": "UsrAddGoldRateSubprocess"
+    },
+    "ManagerName": "ProcessSchemaManager",
+    "Caption": "Add gold rate subprocess",
+    "DependsOn": []
+  }
+}

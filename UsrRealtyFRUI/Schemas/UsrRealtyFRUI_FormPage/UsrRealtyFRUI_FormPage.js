@@ -1,5 +1,4 @@
-/* jshint esversion: 11*/
-define("UsrRealtyFRUI_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEMA_ARGS*/()/**SCHEMA_ARGS*/ {
+define("UsrRealtyFRUI_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA_DEPS*/, function/**SCHEMA_ARGS*/(sdk)/**SCHEMA_ARGS*/ {
 	return {
 		viewConfigDiff: /**SCHEMA_VIEW_CONFIG_DIFF*/[
 			{
@@ -19,6 +18,23 @@ define("UsrRealtyFRUI_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**
 				"values": {
 					"size": "large",
 					"iconPosition": "only-text"
+				}
+			},
+			{
+				"operation": "merge",
+				"name": "MainHeaderBottom",
+				"values": {
+					"justifyContent": "end",
+					"gap": "small",
+					"color": "transparent",
+					"borderRadius": "none",
+					"padding": {
+						"top": "none",
+						"right": "none",
+						"bottom": "none",
+						"left": "none"
+					},
+					"alignItems": "center"
 				}
 			},
 			{
@@ -96,6 +112,62 @@ define("UsrRealtyFRUI_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**
 			},
 			{
 				"operation": "insert",
+				"name": "Button_f22tdxn",
+				"values": {
+					"type": "crt.Button",
+					"caption": "#ResourceString(Button_f22tdxn_caption)#",
+					"color": "primary",
+					"disabled": false,
+					"size": "large",
+					"iconPosition": "left-icon",
+					"visible": true,
+					"menuItems": [],
+					"clickMode": "menu",
+					"icon": "process-button-icon"
+				},
+				"parentName": "MainHeaderBottom",
+				"propertyName": "items",
+				"index": 1
+			},
+			{
+				"operation": "insert",
+				"name": "MenuItem_u80f8q4",
+				"values": {
+					"type": "crt.MenuItem",
+					"caption": "#ResourceString(MenuItem_u80f8q4_caption)#",
+					"visible": true,
+					"clicked": {
+						"request": "crt.RunBusinessProcessRequest",
+						"params": {
+							"processName": "UsrCalculateAverageRealtyPrice",
+							"processRunType": "ForTheSelectedPage",
+							"recordIdProcessParameterName": "RealtyIdParameter"
+						}
+					},
+					"icon": "calculator-button-icon"
+				},
+				"parentName": "Button_f22tdxn",
+				"propertyName": "menuItems",
+				"index": 0
+			},
+			{
+				"operation": "insert",
+				"name": "RunWebServiceButton",
+				"values": {
+					"type": "crt.MenuItem",
+					"caption": "#ResourceString(MenuItem_rzx7ucq_caption)#",
+					"visible": true,
+					"clicked": {
+						"request": "usr.RunWebServiceButtonRequest"
+					},
+					"icon": "gear-button-icon"
+				},
+				"parentName": "Button_f22tdxn",
+				"propertyName": "menuItems",
+				"index": 1
+			},
+			{
+				"operation": "insert",
 				"name": "Button_9dz63we",
 				"values": {
 					"type": "crt.Button",
@@ -113,7 +185,7 @@ define("UsrRealtyFRUI_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**
 				},
 				"parentName": "MainHeaderBottom",
 				"propertyName": "items",
-				"index": 1
+				"index": 2
 			},
 			{
 				"operation": "insert",
@@ -689,11 +761,29 @@ define("UsrRealtyFRUI_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**
 					"NumberAttribute_uuxyl6p": {
 						"modelConfig": {
 							"path": "PDS.UsrPriceUSD"
+						},
+						"validators": {
+							"MySuperValidator": {
+								"type": "usr.DGValidator",
+								"params": {
+									"minValue": 30,
+									"message": "Price can not be less than 30.0"
+								}
+							}
 						}
 					},
 					"NumberAttribute_7lm4wg0": {
 						"modelConfig": {
 							"path": "PDS.UsrArea"
+						},
+						"validators": {
+							"MySuperValidator": {
+								"type": "usr.DGValidator",
+								"params": {
+									"minValue": 10,
+									"message": "Area can not be less than 10.0"
+								}
+							}
 						}
 					},
 					"LookupAttribute_g72aow8": {
@@ -849,6 +939,43 @@ define("UsrRealtyFRUI_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**
 		]/**SCHEMA_MODEL_CONFIG_DIFF*/,
 		handlers: /**SCHEMA_HANDLERS*/[
 			{
+				request: "usr.RunWebServiceButtonRequest",
+				handler: async (request, next) => {
+					this.console.log("Run web service button works...");
+					
+					var typeObject = await request.$context.LookupAttribute_g72aow8;
+					var typeId = "";
+					if (typeObject){
+						typeId = typeObject.value;
+					}
+					
+					var offerTypeObject = await request.$context.LookupAttribute_e5t23mo;
+					var offerTypeId = "";
+					if (offerTypeObject){
+						offerTypeId = offerTypeObject.value;
+					}
+					
+					const httpClientService = new sdk.HttpClientService();
+					
+					const baseUrl = Terrasoft.utils.uri.getConfigurationWebServiceBaseUrl();
+					const transferName = "rest";
+					const serviceName = "RealtyService";
+					const methodName = "GetTotalAmountByTypeId";
+					const endpoint = Terrasoft.combinePath(baseUrl, transferName, serviceName, methodName);
+					
+					var params = {
+						realtyTypeId: typeId,
+						realtyOfferTypeId: offerTypeId,
+						entityName: "UsrRealtyFRUI"
+					};
+					const response = await httpClientService.post(endpoint, params);
+					
+					this.console.log("response total price = " + response.body.GetTotalAmountByTypeIdResult)
+					
+					return next?.handle(request);								
+				}
+			},
+			{
 				request: "usr.MyButtonRequest",
 				handler: async (request, next) => {
 					this.console.log("Button works...");
@@ -865,7 +992,6 @@ define("UsrRealtyFRUI_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**
 					this.console.log('HandleViewModelAttributeChangeRequest: ' + request.attributeName);
 					if(request.attributeName === 'NumberAttribute_uuxyl6p' ||
 					  request.attributeName === 'UsrOfferTypeUsrCommisionPercent'){
-						debugger;
 						this.console.log("HandleViewModelAttributeChangeRequest for the attribute");
 						var price = await request.$context.NumberAttribute_uuxyl6p;
 						this.console.log("price = " + price);
@@ -881,6 +1007,37 @@ define("UsrRealtyFRUI_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**
 			
 		]/**SCHEMA_HANDLERS*/,
 		converters: /**SCHEMA_CONVERTERS*/{}/**SCHEMA_CONVERTERS*/,
-		validators: /**SCHEMA_VALIDATORS*/{}/**SCHEMA_VALIDATORS*/
+		validators: /**SCHEMA_VALIDATORS*/{
+			"usr.DGValidator": {
+				validator: function (config) {
+					return function (control) {
+						let value = control.value;
+						let minValue = config.minValue;
+						let valueIsCorrect = value >= minValue;
+						var result;
+						if (valueIsCorrect){
+							result = null;
+						} else {
+							result = {
+								"usr.DGValidator": {
+									message: config.message
+								}
+							};
+						}
+						return result;
+					};
+				},
+				params: [
+					{
+						name: "minValue"
+					},
+					{
+						name: "message"
+					}
+				],
+				async: false
+			}
+			
+		}/**SCHEMA_VALIDATORS*/
 	};
 });
