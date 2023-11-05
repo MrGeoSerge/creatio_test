@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "3ddb397a-175e-4f09-a84c-3ba8bb7b8bd1",
+    "Name": "UsrCalculateCosts",
+    "ModifiedOnUtc": "\/Date(1699030872000)\/",
+    "ManagerName": "ProcessSchemaManager",
+    "Caption": "Calculate costs of Advertising Campaign",
+    "DependsOn": []
+  }
+}

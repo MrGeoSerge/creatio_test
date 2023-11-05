@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "8a95e486-b681-40c3-9b5d-c1bbe696e394",
+    "Name": "UsrAdvertisingCampaign_ListPage",
+    "ModifiedOnUtc": "\/Date(1698947932000)\/",
+    "Parent": {
+      "UId": "3f1f3f38-a0a4-4549-b895-249fb08f554a",
+      "Name": "ListFreedomTemplate"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "List page"
+  }
+}

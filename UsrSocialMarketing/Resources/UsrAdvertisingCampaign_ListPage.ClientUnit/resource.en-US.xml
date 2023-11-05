@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="LocalizableStrings.Input_jw566je_label.Value" Value="Text" />
+			<Item Name="LocalizableStrings.UsrSystemCurencySetting_label.Value" Value=" System Currency Setting" />
+			<Item Name="Parameters.658d8329-2126-d6b4-ad1e-d3e73a21f3ec.Caption" Value="Currency Setting" />
+		</Items>
+	</Group>
+</Resources>

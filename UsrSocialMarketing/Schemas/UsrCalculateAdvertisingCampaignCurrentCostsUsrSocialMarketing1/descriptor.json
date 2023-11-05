@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "03d9bf99-9101-435a-9b56-392bf611541d",
+    "Name": "UsrCalculateAdvertisingCampaignCurrentCostsUsrSocialMarketing1",
+    "ModifiedOnUtc": "\/Date(1699048167000)\/",
+    "Parent": {
+      "UId": "e384c190-d6ff-4ee1-a3ef-f4bedf709b5b",
+      "Name": "UsrCalculateAdvertisingCampaignCurrentCosts"
+    },
+    "ManagerName": "ProcessSchemaManager",
+    "Caption": "Calculate Advertising Campaign Current Costs",
+    "DependsOn": []
+  }
+}

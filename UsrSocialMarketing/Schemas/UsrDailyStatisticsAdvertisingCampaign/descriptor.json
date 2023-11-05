@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "c58be8f8-20a2-4b91-845b-5d91ee2a34e9",
+    "Name": "UsrDailyStatisticsAdvertisingCampaign",
+    "ModifiedOnUtc": "\/Date(1699168474000)\/",
+    "Parent": {
+      "UId": "1bab9dcf-17d5-49f8-9536-8e0064f1dce0",
+      "Name": "BaseEntity"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Daily Statistics Advertising Campaign",
+    "DependsOn": []
+  }
+}

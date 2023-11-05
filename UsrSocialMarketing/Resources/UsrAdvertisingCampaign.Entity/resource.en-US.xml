@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Advertising Campaign" />
+			<Item Name="Columns.UsrAdvertisingPlatform.Caption" Value="Platform" />
+			<Item Name="Columns.UsrAdvertisingPlatform.Description" Value="Advertising platform type" />
+			<Item Name="Columns.UsrCurrency.Caption" Value="Currency" />
+			<Item Name="Columns.UsrCurrencySetting2.Caption" Value="Currency setting" />
+			<Item Name="Columns.UsrCurrentCost.Caption" Value="Current Cost" />
+			<Item Name="Columns.UsrCurrentCost.Description" Value="Current Cost" />
+			<Item Name="Columns.UsrCurrentCostUSD.Caption" Value="Current Cost USD" />
+			<Item Name="Columns.UsrCurrentCostUSD.Description" Value="Current Cost USD" />
+			<Item Name="Columns.UsrEndDate.Caption" Value="End Date" />
+			<Item Name="Columns.UsrIsHighPriceAgreed.Caption" Value="Is High Price Agreed" />
+			<Item Name="Columns.UsrIsHighPriceAgreed.Description" Value="Is High Price Agreed" />
+			<Item Name="Columns.UsrMaximumCost.Caption" Value="Maximum Cost" />
+			<Item Name="Columns.UsrMaximumCost.Description" Value="Maximum Cost" />
+			<Item Name="Columns.UsrName.Caption" Value="Name" />
+		</Items>
+	</Group>
+</Resources>

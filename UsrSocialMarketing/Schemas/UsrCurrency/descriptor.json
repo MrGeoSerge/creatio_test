@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "d2add891-e2da-4c1c-9c0f-6d3f8e7a6b81",
+    "Name": "UsrCurrency",
+    "ModifiedOnUtc": "\/Date(1699168451000)\/",
+    "Parent": {
+      "UId": "11ab4bcb-9b23-4b6d-9c86-520fae925d75",
+      "Name": "BaseLookup"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Currency",
+    "DependsOn": []
+  }
+}

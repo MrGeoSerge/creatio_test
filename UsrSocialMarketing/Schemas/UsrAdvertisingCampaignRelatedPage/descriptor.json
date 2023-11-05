@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "270aab9c-6325-414f-8789-5de32e65f5e6",
+    "Name": "UsrAdvertisingCampaignRelatedPage",
+    "ModifiedOnUtc": "\/Date(1698835118000)\/",
+    "ManagerName": "AddonSchemaManager",
+    "Caption": "Advertising Campaign (Page settings)",
+    "DependsOn": []
+  }
+}

@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "69b8c4f5-df8c-474e-b66a-fecb8bc8eb7c",
+    "Name": "UsrDailyStatisticsAdvertisingCampaignRelatedPage",
+    "ModifiedOnUtc": "\/Date(1698920838000)\/",
+    "ManagerName": "AddonSchemaManager",
+    "Caption": "Daily Statistics Advertising Campaign (Page settings)",
+    "DependsOn": []
+  }
+}

@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "c750692b-389b-40d7-9f58-9da06f594ee5",
+    "Name": "UsrAdvertisingPlatform",
+    "ModifiedOnUtc": "\/Date(1698844668000)\/",
+    "Parent": {
+      "UId": "11ab4bcb-9b23-4b6d-9c86-520fae925d75",
+      "Name": "BaseLookup"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Advertising Platform",
+    "DependsOn": []
+  }
+}

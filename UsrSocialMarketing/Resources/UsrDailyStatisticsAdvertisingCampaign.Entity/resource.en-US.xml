@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Daily Statistics Advertising Campaign" />
+			<Item Name="Columns.UsrClicks.Caption" Value="Clicks" />
+			<Item Name="Columns.UsrClicksPerVisit.Caption" Value="Clicks Per Visit" />
+			<Item Name="Columns.UsrMrktCampaignId.Caption" Value="Advertising Compaign Id" />
+			<Item Name="Columns.UsrSpentToday.Caption" Value="Spent Today" />
+			<Item Name="Columns.UsrVisits.Caption" Value="Visits" />
+		</Items>
+	</Group>
+</Resources>

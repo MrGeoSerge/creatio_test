@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Advertising Campaign form page" />
+			<Item Name="LocalizableStrings.addRecord_3jjse39_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.addRecord_bvcfimp_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.addRecord_crztczb_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.addRecord_dftcapw_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.addRecord_k4nqlfh_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.addRecord_njggtb1_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.addRecord_qtmt9le_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.Button_cz135ma_caption.Value" Value="Calculate Costs" />
+			<Item Name="LocalizableStrings.ComboBox_nnpnpkl_ariaLabel.Value" Value="Dropdown" />
+			<Item Name="LocalizableStrings.ComboBox_nnpnpkl_label.Value" Value="Dropdown" />
+			<Item Name="LocalizableStrings.ComboBox_opkqgw9_ariaLabel.Value" Value="Dropdown" />
+			<Item Name="LocalizableStrings.ComboBox_opkqgw9_label.Value" Value="Platform" />
+			<Item Name="LocalizableStrings.ComboBox_rzusgyv_ariaLabel.Value" Value="Dropdown" />
+			<Item Name="LocalizableStrings.ComboBox_rzusgyv_label.Value" Value="Dropdown" />
+			<Item Name="LocalizableStrings.ComboBox_xrdr7ht_ariaLabel.Value" Value="Dropdown" />
+			<Item Name="LocalizableStrings.ComboBox_xrdr7ht_label.Value" Value="Dropdown" />
+			<Item Name="LocalizableStrings.ExpansionPanel_f0stljw_title.Value" Value="Daily Statistics Advertising Campaign" />
+			<Item Name="LocalizableStrings.GridDetailAddBtn_cpjqrhh_caption.Value" Value="New" />
+			<Item Name="LocalizableStrings.GridDetailExportDataBtn_6z47p5e_caption.Value" Value="Export to Excel" />
+			<Item Name="LocalizableStrings.GridDetailImportDataBtn_aemiir1_caption.Value" Value="Data import" />
+			<Item Name="LocalizableStrings.GridDetailRefreshBtn_0dbeasv_caption.Value" Value="Refresh" />
+			<Item Name="LocalizableStrings.GridDetailSearchFilter_n31mlvd_placeholder.Value" Value="Search" />
+			<Item Name="LocalizableStrings.GridDetailSettingsBtn_p7e7xle_caption.Value" Value="Actions" />
+			<Item Name="LocalizableStrings.Input_eod4nxn_label.Value" Value="Text" />
+			<Item Name="LocalizableStrings.NumberInput_4j3z9ej_label.Value" Value="Convinient Price" />
+			<Item Name="LocalizableStrings.NumberInput_h78brqr_label.Value" Value="Number" />
+			<Item Name="LocalizableStrings.UsrCalculateCostsButton_caption.Value" Value="Calculate Costs" />
+			<Item Name="LocalizableStrings.UsrConvinientPrice_label.Value" Value="Convenient Price" />
+		</Items>
+	</Group>
+</Resources>

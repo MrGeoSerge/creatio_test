@@ -1,0 +1,17 @@
+﻿{
+  "Descriptor": {
+    "UId": "8a0ed914-36d0-7f76-b833-646bc06f3d04",
+    "Name": "UsrSocialMarketing",
+    "Type": 1,
+    "ModifiedOnUtc": "\/Date(1698831880000)\/",
+    "Maintainer": "Customer",
+    "ProjectPath": "Files/UsrSocialMarketing.csproj",
+    "DependsOn": [
+      {
+        "UId": "a5da1dcd-42a5-4b11-bc6f-19789d7ad32a",
+        "PackageVersion": "7.8.0",
+        "Name": "MarketingEssentialEnu"
+      }
+    ]
+  }
+}
